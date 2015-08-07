@@ -33,7 +33,6 @@ public class SportsActivity extends AppCompatActivity {
         setContentView(R.layout.entertainment_view);
 
         listView = (ListView) findViewById(R.id.corporate_listview);
-        sportsTitle = (TextView) findViewById(R.id.magazine_id);
         progressBar = (ProgressBar) findViewById(R.id.progressBar) ;
         if (sportsTitle != null)
             sportsTitle.setText("Sports Activity");

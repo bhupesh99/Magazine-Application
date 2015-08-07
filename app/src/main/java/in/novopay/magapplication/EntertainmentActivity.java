@@ -34,7 +34,6 @@ public class EntertainmentActivity extends AppCompatActivity {
         setContentView(R.layout.entertainment_view);
 
         listView = (ListView) findViewById(R.id.corporate_listview);
-        entertainmentTitle = (TextView) findViewById(R.id.magazine_id);
         progressBar = (ProgressBar) findViewById(R.id.progressBar) ;
         if (entertainmentTitle != null)
             entertainmentTitle.setText("Entertainment Activity");
@@ -74,7 +73,6 @@ public class EntertainmentActivity extends AppCompatActivity {
         }
 
         @Override
-
         protected void onPostExecute(SportsMag sportsMag) {
             Log.d(TAG, "OnPost Execute");
             magazineAdapter = new MagazineAdapter(EntertainmentActivity.this, sportsMag.getResults().getCollection1());

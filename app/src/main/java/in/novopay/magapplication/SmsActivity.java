@@ -45,11 +45,12 @@ public class SmsActivity extends Activity {
 
     protected void sendSMSMessage(String phoneNo) {
         Log.i("Send SMS", "");
+        String message  = "Congratulations! You have succesfully subscribed to magazine " + getIntent().getStringExtra("Magazine Cover") ;
 
         try {
             SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(phoneNo, null, "Application Working", null, null);
-            Toast.makeText(getApplicationContext(), "SMS sent.", Toast.LENGTH_LONG).show();
+            smsManager.sendTextMessage(phoneNo, null, message, null, null);
+            Toast.makeText(getApplicationContext(), "You have successfully subscribed.", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "SMS failed, please try again.", Toast.LENGTH_LONG).show();
             e.printStackTrace();

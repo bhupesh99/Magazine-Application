@@ -22,11 +22,11 @@ public class EntertainmentAPI {
     }
 
     public interface EntertainmentInterface {
-        @GET("api/2ngljkcw?apikey=RsDgM8LIyKLUqdTelVtajUahTAB7SoOf")
+        @GET("/2ngljkcw?apikey=RsDgM8LIyKLUqdTelVtajUahTAB7SoOf")
         SportsMag getEntertainmentList();
 
 
-        @GET("/api/2ngljkcw?apikey=RsDgM8LIyKLUqdTelVtajUahTAB7SoOf")
+        @GET("/2ngljkcw?apikey=RsDgM8LIyKLUqdTelVtajUahTAB7SoOf")
         void getEntertainmentList(retrofit.Callback<SportsMag> musicAPIModelCallback);
     }
 }

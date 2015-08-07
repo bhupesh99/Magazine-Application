@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/magazine_id"/>
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:id="@+id/magazine_cover"
-        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/magazine_title"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_toRightOf="@+id/magazine_cover"
+        android:layout_alignParentTop="true"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/magazine_description"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_toRightOf="@+id/magazine_cover"
+        android:layout_below="@+id/magazine_title"
+        android:layout_toLeftOf="@+id/subscribe"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:id="@+id/subscribe"
-        android:text="Subscribe"/>
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/subscribe"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
-</LinearLayout>
+</RelativeLayout>
