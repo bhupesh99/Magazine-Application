@@ -9,13 +9,15 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button sportsButton = (Button) findViewById(R.id.magazine_sports);
-    Button corporateButton = (Button) findViewById(R.id.magazine_corporate) ;
+    Button sportsButton ;
+    Button corporateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sportsButton = (Button) findViewById(R.id.magazine_sports);
+        corporateButton = (Button) findViewById(R.id.magazine_corporate);
 
         sportsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         corporateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CorporateActivity.class) ;
+                Intent intent = new Intent(MainActivity.this, EntertainmentActivity.class);
                 startActivity(intent);
             }
         });
