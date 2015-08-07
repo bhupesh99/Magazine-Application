@@ -11,6 +11,8 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button sportsButton ;
     Button corporateButton;
+    public static String phoneNo ;
+    public static final String PHONE_NO = "phoneno" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        phoneNo = getIntent().getStringExtra(PHONE_NO) ;
     }
 
     @Override

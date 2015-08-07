@@ -1,10 +1,12 @@
 package in.novopay.magapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +16,8 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import in.novopay.magapplication.model.Collection1;
+
+import static android.support.v4.app.ActivityCompat.startActivity;
 
 /**
  * Created by bupeshkumar on 8/7/15.
@@ -49,6 +53,7 @@ public class MagazineAdapter extends BaseAdapter{
         ImageView magazineCover;
         TextView magazineTitle;
         TextView magazineDescription;
+        Button subscribe ;
     }
 
     @Override
@@ -64,6 +69,7 @@ public class MagazineAdapter extends BaseAdapter{
             viewHolder.magazineTitle = (TextView) view.findViewById(R.id.magazine_title);
             viewHolder.magazineDescription = (TextView) view.findViewById(R.id.magazine_description);
             viewHolder.magazineCover = (ImageView) view.findViewById(R.id.magazine_cover);
+            viewHolder.subscribe = (Button) view.findViewById(R.id.subscribe) ;
 
             view.setTag(viewHolder);
         }
@@ -80,6 +86,16 @@ public class MagazineAdapter extends BaseAdapter{
                 .load(collection1.getMagazinephoto().getSrc())
                 .into(viewHolder.magazineCover);
         viewHolder.magazineDescription.setText(collection1.getMagazinedesc());
+        final ViewHolder finalViewHolder = viewHolder;
+        viewHolder.subscribe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(contextWeakReference.get(), SmsActivity.class) ;
+                intent.putExtra("Magazine Cover", finalViewHolder.magazineTitle.getText()) ;
+                contextWeakReference.get().startActivity(intent) ;
+            }
+        });
+
         return view;
 
     }
